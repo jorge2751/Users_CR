@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Show User</h1>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td>{{ user.first_name }}</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>{{ user.last_name }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Created At</th>
+                <td>{{ user.created_at }}</td>
+            </tr>
+            <tr>
+                <th>Updated At</th>
+                <td>{{ user.updated_at }}</td>
+            </tr>
+        </table>
+        <a href="/" class="btn btn-primary">All Users</a>
+        <a href="/users/{{ user.id }}/edit" class="btn btn-secondary">Edit User</a>
+        <form action="/users/{{ user.id }}/delete" method="post" style="display: inline">
+            <button type="submit" class="btn btn-danger">Delete User</button>
+        </form>
+    </div>
+</body>
+</html>
